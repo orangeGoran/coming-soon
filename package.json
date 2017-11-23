@@ -1,0 +1,26 @@
+{
+  "name": "free-coming-soon-page-master",
+  "version": "1.0.0",
+  "description": "Coming soon for koping.si",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orangeGoran/coming-soon.git"
+  },
+  "author": "Goran Tubic <mail.goran96@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orangeGoran/coming-soon/issues"
+  },
+  "homepage": "https://github.com/orangeGoran/coming-soon#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "moment": "^2.19.2",
+    "mongoose": "^4.13.4",
+    "morgan": "^1.9.0"
+  }
+}

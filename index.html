@@ -60,7 +60,7 @@
 
 	html{
 		height:100%;
-		background: #ffffff url(https://images.unsplash.com/photo-1449168013943-3a15804bb41c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=1958d4bfb59a246c6092ff0daabd284b); no-repeat center bottom fixed;
+		background: #ffffff url(file:///home/bananabitch/Desktop/workspace/koping/free-coming-soon-page-master/o.jpeg); no-repeat center bottom fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -71,9 +71,28 @@
 		background-color: rgba(0,0,0,0);
 	}
 
-	.flexbox #cspio-page{
-		align-items: center;
-		justify-content: center;
+
+
+	@media only screen and (max-width: 1000px) {
+		.flexbox #cspio-page{
+			/*align-items: center;
+			justify-content: center;*/
+
+			align-items: center;
+			justify-content: center;
+			/*vertical-align: text-top;*/
+		}
+	}
+
+	@media only screen and (min-width: 1000px) {
+		.flexbox #cspio-page{
+			/*align-items: center;
+			justify-content: center;*/
+
+			align-items: center;
+			justify-content: center;
+			/*vertical-align: text-top;*/
+		}
 	}
 
 	.cspio body{
@@ -218,13 +237,16 @@
     #cspio-content {
 		display: none;
 		max-width: 600px;
-		background-color: #000000;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
 		-moz-background-clip: padding;
 		-webkit-background-clip: padding-box;
 		background-clip: padding-box;
-		background-color:transparent;
+		background-color: rgba(54, 25, 25, .6);;
+		border-radius: 10px;
+		padding: 40px;
+		/*opacity: 0.6;*/
+		/*background-color:transparent;*/
 	}
 
 	.cspio .progress-bar,
