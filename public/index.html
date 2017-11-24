@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html class="cspio">
 <head>
-	<!---
-	Welcome to our free coming soon page template by http://comingsoonpage.com Get your free download at https://www.seedprod.com/free-coming-soon-page/
-	This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
-	http://creativecommons.org/licenses/by-nc-nd/4.0/
 
-	To get started follow this checklist.
-
-	1. Replace the *Page Title* on lines 23, 31 & 296
-	2. Set the *Page Description* on lines 26, 32 & 298
-	3. Set an optional *Logo* on lines 294 using the src attribute.
-	4. Set your *Facebook Profile* URL on line 312 using the href attribute.
-	5. Set your *Twitter Profile* URL on line 313 using the href attribute.
-	6. Set your *Email* on line 314 using the href attribute.
-	7. Set your background image on line 63, see file README.mb for additional background images.
-	8. Set your MailChimp email post URL on line 300 See video: https://youtu.be/YUdP1qfMot8
-	9. FTP to your Website.
-	-->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Coming Soon Page</title>
+	<title>Koping - v izdelavi</title>
 
-	<meta name="generator" content="comingsoonpage.com 1.0.0" />
+	<meta name="generator" content="koping.si 1.0.0" />
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="https://static.comingsoonpage.com/cspio-assets/1.0.0/favicon.ico">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="csp/public/images/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="csp/public/images/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="csp/public/images/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="csp/public/images/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="csp/public/images/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="csp/public/images/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="csp/public/images/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="csp/public/images/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="csp/public/images/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="csp/public/images/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="csp/public/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="csp/public/images/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="csp/public/images/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
 	<meta property="og:url" content="" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="My Coming Soon Page" />
+	<meta property="og:title" content="Koping.si -> V izdelavi" />
 	<meta property="og:description" content="" />
 
 	<!-- Font Awesome CSS -->
@@ -319,7 +321,7 @@
 
 			<div id="cspio-description">Obvestimo vas, ko bo stran dostopna!</div>
 
-			<form id="cspio-form" action="" method="post">
+			<form id="cspio-form" action="#">
 				<div id="cspio-field-wrapper">
 					<div class="row">
 						<div class="col-md-12 seperate"><div class="input-group"><input id="cspio-email" name="EMAIL" class="form-control input-lg form-el" type="email" placeholder="Email" required/>
@@ -348,6 +350,18 @@
 
 
 	<script>
+		$("#cspio-form").submit(function( event ) {
+		  event.preventDefault();
+		  var posting = $.post( 'csp/email/register', { email: document.getElementById('cspio-email').value } );
+
+		  posting.done(function( data ) {
+				$('#cspio-email').val('');
+				alert("Uspešno ste se prijavili na email listo.")
+		  }).fail(function() {
+		    alert("Izbran email je ze prijavljen na listi za obvestilo.");
+		  })
+		});
+
 		// Animate Delay
 		setTimeout(function(){ jQuery("#cspio-content").show().addClass('animated fadeIn'); }, 250);
 
